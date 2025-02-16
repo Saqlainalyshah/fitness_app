@@ -21,142 +21,182 @@ class HomeScreen extends ConsumerWidget {
         centerTitle: true,
         actions: [Icon(Icons.more_vert_outlined)],
       ),
-      body: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Column(
-          spacing: 20,
-          children: [
-            Container(
-              padding: EdgeInsets.all(20),
-              height: MediaQuery.sizeOf(context).height * 0.4,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: AppColor.secondaryColor),
-              child: StepCounter(),
-            ),
-            Container(
-                height: MediaQuery.sizeOf(context).height * 0.15,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            spacing: 20,
+            children: [
+              Container(
+                padding: EdgeInsets.all(20),
+                height: MediaQuery.sizeOf(context).height * 0.35,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: AppColor.secondaryColor),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.timelapse),
-                        TextWidget(text: "1h 14m", isBold: true, fontSize: 16),
-                        TextWidget(text: "time", fontSize: 14),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: VerticalDivider(
-                        thickness: 1,
-                        width: 1,
-                      ),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.timelapse),
-                        TextWidget(text: "1h 14m", isBold: true, fontSize: 16),
-                        TextWidget(text: "time", fontSize: 14),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: VerticalDivider(
-                        thickness: 1,
-                        width: 1,
-                      ),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.timelapse),
-                        TextWidget(text: "1h 14m", isBold: true, fontSize: 16),
-                        TextWidget(text: "time", fontSize: 14),
-                      ],
-                    ),
-                  ],
-                )),
-            Container(
-              height: MediaQuery.sizeOf(context).height * 0.25,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: AppColor.secondaryColor),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        TextWidget(
-                          text: "Your Progress",
-                          isBold: true,
-                          fontSize: 20,
-                        ),
-                        DropdownWidget(
-                          value: ref.watch(homeScreenProgressValueProvider),
-                          list: ref.watch(homeScreenProgressListProvider),
-                          onChanged: (String? value) {
-                            if (value != null) {
-                              ref
-                                  .read(homeScreenProgressValueProvider.notifier)
-                                  .state = value;
-                            }
-                          },
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DividerWidget(height: 0,),
-                  ),
-                  Expanded(
-                    child: ListView.separated(
-                      physics: BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        
-                        itemCount: 7,
-                        itemBuilder: (context,index){
-                          return Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 50,
-                                    height: 50,
-                                    child: CircularProgressIndicator(
-                                      // padding: EdgeInsets.only(left: 10),
-                                      color: AppColor.primaryColor,
-                                      backgroundColor: Colors.grey.shade400,
-                                      value: 0.5,),
-                                  ),
-                                  TextWidget(text: '43',isBold: true,),
-                                ],
-                              ),
-                              TextWidget(text: 'Mon',isBold: true,color: Colors.grey.shade700,),
-                            ],
-                          );
-                                },
-                        separatorBuilder: (context,index){
-                          return Padding(padding: EdgeInsets.all(10));
-                        },
-                    
-                    ),
-                  ),
-                  //DateSelectorWidget()
-                ],
+                child: StepCounter(),
               ),
-            )
+              Container(
+                  height: MediaQuery.sizeOf(context).height * 0.15,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: AppColor.secondaryColor),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(Icons.timelapse),
+                          TextWidget(text: "1h 14m", isBold: true, fontSize: 16),
+                          TextWidget(text: "time", fontSize: 14),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        child: VerticalDivider(
+                          thickness: 1,
+                          width: 1,
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(Icons.timelapse),
+                          TextWidget(text: "1h 14m", isBold: true, fontSize: 16),
+                          TextWidget(text: "time", fontSize: 14),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        child: VerticalDivider(
+                          thickness: 1,
+                          width: 1,
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(Icons.timelapse),
+                          TextWidget(text: "1h 14m", isBold: true, fontSize: 16),
+                          TextWidget(text: "time", fontSize: 14),
+                        ],
+                      ),
+                    ],
+                  )),
+              Container(
+                height: MediaQuery.sizeOf(context).height * 0.25,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: AppColor.secondaryColor),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextWidget(
+                            text: "Your Progress",
+                            isBold: true,
+                            fontSize: 20,
+                          ),
+                          DropdownWidget(
+                            value: ref.watch(homeScreenProgressValueProvider),
+                            list: ref.watch(homeScreenProgressListProvider),
+                            onChanged: (String? value) {
+                              if (value != null) {
+                                ref
+                                    .read(homeScreenProgressValueProvider.notifier)
+                                    .state = value;
+                              }
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: DividerWidget(height: 0,),
+                    ),
+                    Expanded(
+                      child: ListView.separated(
+                        physics: BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          
+                          itemCount: 7,
+                          itemBuilder: (context,index){
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    SizedBox(
+                                      width: 50,
+                                      height: 50,
+                                      child: CircularProgressIndicator(
+                                        // padding: EdgeInsets.only(left: 10),
+                                        color: AppColor.primaryColor,
+                                        backgroundColor: Colors.grey.shade400,
+                                        value: 0.5,),
+                                    ),
+                                    TextWidget(text: '43',isBold: true,),
+                                  ],
+                                ),
+                                TextWidget(text: 'Mon',isBold: true,color: Colors.grey.shade700,),
+                              ],
+                            );
+                                  },
+                          separatorBuilder: (context,index){
+                            return Padding(padding: EdgeInsets.all(10));
+                          },
+                      
+                      ),
+                    ),
+                    //DateSelectorWidget()
+                  ],
+                ),
+              ),
+              SizedBox(height: 10,)
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Colors.white,
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: AppColor.primaryColor,
+          unselectedItemColor: Colors.black38,
+          elevation: 0.0,
+          selectedIconTheme: const IconThemeData(size: 30),
+          showUnselectedLabels: true,
+          currentIndex: 0,
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+          unselectedLabelStyle:  const TextStyle(fontWeight: FontWeight.bold),
+          onTap: (index) {
+            //ref.read(navigationNotifierProvider.notifier).setSelectedIndex(index);
+          },
+          items: const [
+            BottomNavigationBarItem(
+              label: "Home",
+              icon: Icon(Icons.home),
+            ),
+            BottomNavigationBarItem(
+              label: "Wishlist",
+              icon: Icon(Icons.favorite),
+            ),
+            BottomNavigationBarItem(
+              label: "My trip",
+              icon: Icon(Icons.flight), // don't know the name of the icon
+            ),
+            BottomNavigationBarItem(
+              label: "Account",
+              icon: Icon(Icons.person),
+            ),
           ],
         ),
       ),

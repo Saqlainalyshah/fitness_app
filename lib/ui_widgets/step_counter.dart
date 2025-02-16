@@ -37,7 +37,7 @@ class StepCounter extends ConsumerWidget {
             )
           ]),
           PositionedDirectional(
-            top: 120,
+            top: 80,
             child: Column(
               spacing: 5,
               // mainAxisAlignment: MainAxisAlignment.,
@@ -48,7 +48,7 @@ class StepCounter extends ConsumerWidget {
                 ),
                 Text(
                   '$currentSteps',
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold,),
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,),
                 ),
                 Text(
                   '/$goalSteps Steps',
