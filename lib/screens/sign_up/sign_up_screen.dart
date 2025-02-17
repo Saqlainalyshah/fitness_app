@@ -68,7 +68,6 @@ final TextEditingController controller=TextEditingController();
                 children: [
                   Checkbox(
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    // tristate: true,
                     value: ref.watch(signupScreenCheckBoxProvider),
                     onChanged: (value) {
                       ref.read(signupScreenCheckBoxProvider.notifier).state = value!;

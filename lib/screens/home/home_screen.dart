@@ -186,11 +186,15 @@ class HomeScreen extends ConsumerWidget {
               icon: Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-              label: "Wishlist",
+              label: "Track",
               icon: Icon(Icons.favorite),
             ),
             BottomNavigationBarItem(
-              label: "My trip",
+              label: "Report",
+              icon: Icon(Icons.flight), // don't know the name of the icon
+            ),
+            BottomNavigationBarItem(
+              label: "History",
               icon: Icon(Icons.flight), // don't know the name of the icon
             ),
             BottomNavigationBarItem(
